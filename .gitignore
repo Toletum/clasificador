@@ -130,5 +130,4 @@ dmypy.json
 
 .idea/
 pyvenv.cfg
-Train/
-Validator/
+*.h5
