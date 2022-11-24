@@ -2,13 +2,13 @@
 clasificador keras
 
 ```
-virtualenv venv
+python3 -m pip install --upgrade pip
+pip3 install virtualenv
 
-pip install keras
-pip install tensorflow
-pip install numpy
-pip install Pillow
-pip install scipy
-pip install keras_preprocessing
+virtualenv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
 ```
 
