@@ -2,6 +2,8 @@
 clasificador keras
 
 ```
+virtualenv venv
+
 pip install keras
 pip install tensorflow
 pip install numpy
