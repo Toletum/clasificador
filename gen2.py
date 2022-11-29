@@ -1,17 +1,20 @@
+"""
+https://www.tensorflow.org/tutorials/images/classification
+"""
 import tensorflow as tf
 
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 
 import pathlib
+import pickle
 
 dataset_url = "/home/toletum/clasificador/t_data/train"
 data_dir = pathlib.Path(dataset_url)
 
-image_count = len(list(data_dir.glob('*/*.jpg')))
-print(image_count)
+batch_size = 64
+epochs = 32
 
-batch_size = 16
 img_height = 231
 img_width = 113
 
@@ -34,6 +37,8 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
 class_names = train_ds.class_names
 print(class_names)
 
+pickle.dump(class_names, open('class_names.obj', 'wb'))
+
 num_classes = len(class_names)
 
 model = Sequential([
@@ -53,7 +58,6 @@ model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 
-epochs = 10
 history = model.fit(
   train_ds,
   validation_data=val_ds,

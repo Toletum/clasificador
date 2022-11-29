@@ -131,6 +131,7 @@ dmypy.json
 .idea/
 pyvenv.cfg
 *.h5
+*.obj
 
 v_data/
 t_data/
