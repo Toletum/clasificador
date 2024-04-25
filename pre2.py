@@ -1,6 +1,5 @@
 import tensorflow as tf
 
-from keras.models import load_model
 
 import numpy as np
 
@@ -11,7 +10,7 @@ img_width = 113
 
 class_names = pickle.load(open('class_names.obj', 'rb'))
 
-model = load_model('./model_saved2.h5')
+model = tf.keras.models.load_model('./model_saved2.h5')
 
 img = tf.keras.utils.load_img(
     "/home/toletum/clasificador/t_data/train/profile/002.jpg", target_size=(img_height, img_width)

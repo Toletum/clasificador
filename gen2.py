@@ -4,7 +4,6 @@ https://www.tensorflow.org/tutorials/images/classification
 import tensorflow as tf
 
 from tensorflow.keras import layers
-from tensorflow.keras.models import Sequential
 
 import pathlib
 import pickle
@@ -41,7 +40,7 @@ pickle.dump(class_names, open('class_names.obj', 'wb'))
 
 num_classes = len(class_names)
 
-model = Sequential([
+model = tf.keras.models.Sequential([
   layers.Rescaling(1./255, input_shape=(img_height, img_width, 3)),
   layers.Conv2D(16, 3, padding='same', activation='relu'),
   layers.MaxPooling2D(),

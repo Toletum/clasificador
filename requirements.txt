@@ -1,6 +1,5 @@
-keras==2.11.0
-tensorflow==2.11.0
-numpy==1.23.5
-Pillow==9.3.0
-scipy==1.9.3
-keras_preprocessing
+keras
+tensorflow
+numpy
+Pillow
+scipy

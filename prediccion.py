@@ -1,9 +1,9 @@
 import numpy as np
+import tensorflow as tf
 
-from keras.models import load_model
 from keras_preprocessing.image import load_img
 
-model = load_model('./model_saved2.h5')
+model = tf.keras.models.load_model('./model_saved2.h5')
 
 
 image = load_img('t_data/test/location/001.jpg', target_size=(113, 231))
